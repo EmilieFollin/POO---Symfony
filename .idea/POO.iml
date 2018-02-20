@@ -27,6 +27,32 @@
       <sourceFolder url="file://$MODULE_DIR$/symfony/cours/02-TECHNEWS-SF/TechNews/vendor/sensio/framework-extra-bundle" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/symfony/cours/02-TECHNEWS-SF/TechNews/vendor/ocramius/proxy-manager/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/symfony/cours/02-TECHNEWS-SF/TechNews/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/var/cache/dev" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/psr/log" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/symfony/phpunit-bridge/Tests/Fixtures/coverage" isTestSource="false" packagePrefix="PhpUnitCoverageTest" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/doctrine/common/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/src" isTestSource="false" packagePrefix="App" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/doctrine/migrations/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/symfony/framework-bundle/Tests/Fixtures" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/doctrine/dbal/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/doctrine/instantiator/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/monolog/monolog/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/doctrine/doctrine-cache-bundle/Tests/DependencyInjection" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/ocramius/package-versions/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/doctrine/collections/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/sensio/framework-extra-bundle" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/monolog/monolog/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/doctrine/orm/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/doctrine/inflector/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/doctrine/cache/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/egulias/email-validator" isTestSource="false" packagePrefix="Egulias" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/doctrine/annotations/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/doctrine/lexer/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/var/cache/prod" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/twig/twig/src" isTestSource="false" packagePrefix="Twig" />
+      <sourceFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/ocramius/proxy-manager/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/symfony/02-TECHNEWS-SF/TechNews/tests" />
       <excludeFolder url="file://$MODULE_DIR$/symfony/cours/02-TECHNEWS-SF/TechNews/tests" />
     </content>
     <orderEntry type="inheritedJdk" />

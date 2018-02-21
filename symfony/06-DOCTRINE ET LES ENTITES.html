@@ -10,7 +10,7 @@
 
 <body class="stackedit">
   <div class="stackedit__html"><h1 id="doctrine--symfony-4">Doctrine | Symfony 4</h1>
-<p>Avant d’attaquer directement notre BDD, nous allons dans un premier temps travailler avec des providers.</p>
+<p>Nous allons commencé à travailler avec notre base de données grâce à Doctrine.</p>
 <blockquote>
 <p>Doc de référence :<br>
 <a href="https://symfony.com/doc/current/doctrine.html">https://symfony.com/doc/current/doctrine.html</a></p>
@@ -116,6 +116,9 @@ Créons les propriétés suivantes :</p>
 <li>categorie</li>
 <li>auteur</li>
 </ul>
+<blockquote>
+<p>Doc de Référence : <a href="http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/annotations-reference.html">http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/annotations-reference.html</a></p>
+</blockquote>
 <p>N’oubliez pas, chaque propriété correspond à une colonne dans notre base de donnée. Nous allons préciser cela grâce aux annotations :<br>
 Par exemple :</p>
 <pre><code>/**
@@ -126,6 +129,7 @@ private $titre;
 <blockquote>
 <p>Atelier Mise en Place des Annotations pour les Entités Article, Catégorie et Auteur.</p>
 </blockquote>
+<p>Tout est correct, nous pouvons générer pour chaque entité nos <strong>getters</strong> et <strong>setters</strong>.</p>
 <h3 id="comment-gérer-les-relations-entre-les-tables-">Comment gérer les relations entre les tables ?</h3>
 <p>Il nous faut maintenant pouvoir gérer les relations entre nos tables. Plusieurs articles auront une catégorie, ou inversement, une catégorie aura plusieurs articles. Nous avons donc une relation <strong>ManyToOne</strong> et <strong>OneToMany</strong></p>
 <blockquote>
@@ -174,16 +178,16 @@ public function __construct() {
 <p>Nous pouvons vérifier la validité de nos relations :</p>
 <pre><code>php bin/console doctrine:schema:validate
 [Mapping]  OK - The mapping files are correct.
-[Database] OK - The database schema is in sync with the mapping files.
+[Database] FAIL - The database schema is not in sync with the current mapping file.
 </code></pre>
-<p>En option :</p>
+<p>Le FAIL est normal, nous n’avons pas encore sauvegarder nos modifications en BDD.<br>
+En option :</p>
 <pre><code>php bin/console doctrine:mapping:info
 Found 3 mapped entities:
 [OK]   App\Entity\Article
 [OK]   App\Entity\Auteur
 [OK]   App\Entity\Categorie
 </code></pre>
-<p>Tout est correct, nous pouvons générer pour chaque entité nos <strong>getters</strong> et <strong>setters</strong>.</p>
 <p>Nous allons ensuite demandé a Doctrine, via Symfony de créer nos tables. Dans la console :</p>
 <pre><code>php bin/console doctrine:migrations:diff
 </code></pre>
@@ -252,7 +256,68 @@ return $this-&gt;render('index/article.html.twig', [
 <pre><code>public function article(Article $article)
 </code></pre>
 <p>Autrement dit, cette fonctionnalité de <strong>SensioFrameworkExtraBundle</strong> permettra à symfony de convertir AUTOMATIQUEMENT votre paramètre <strong>id</strong> en objet.</p>
-<h2 id="repository--dql">Repository &amp; DQL</h2>
+<h2 id="repository">Repository</h2>
+<p>Supposons maintenant que nous souhaiterions récupérer les informations suivantes :</p>
+<ol>
+<li>Les 5 derniers articles de la BDD trier par ordre décroissant.</li>
+<li>Récupérer tout les articles d’une catégorie sauf l’article en cours, 3 articles maximum, par ordre décroissant. (Afficher des suggestions de lecture)</li>
+</ol>
+<blockquote>
+<p>Doc de Référence : <a href="https://symfony.com/doc/current/doctrine/associations.html#joining-related-records">https://symfony.com/doc/current/doctrine/associations.html#joining-related-records</a></p>
+</blockquote>
+<p>Nous allons créer notre propre fonction dans  <strong>src/Repository/ArticleRepository</strong> :</p>
+<p>Pour la récupération des 5 derniers articles du site :</p>
+<pre><code>public function findLastFiveArticle()
+{
+    return $this-&gt;createQueryBuilder('a')
+        -&gt;orderBy('a.id', 'DESC')
+        -&gt;setMaxResults(5)
+        -&gt;getQuery()
+        -&gt;getResult()
+        ;
+}
+</code></pre>
+<p>Pour récupérer des suggestions d’articles de la même catégorie :</p>
+<pre><code>public function findArticleSuggestions($idarticle, $idcategorie)
+{
+    return $this-&gt;createQueryBuilder('a')
+        -&gt;where('a.categorie = :categorie_id')-&gt;setParameter('categorie_id', $idcategorie)
+        -&gt;andWhere('a.id != :article_id')-&gt;setParameter('article_id', $idarticle)
+        -&gt;orderBy('a.id', 'DESC')
+        -&gt;setMaxResults(3)
+        -&gt;getQuery()
+        -&gt;getResult()
+        ;
+}
+</code></pre>
+<p>Ensuite dans notre contrôleur, nous pouvons récupérer les informations via :</p>
+<pre><code># Récupération des suggestions
+$suggestions = $this-&gt;getDoctrine()
+    -&gt;getRepository(Article::class)
+    -&gt;findArticleSuggestions($article-&gt;getId(),$article-&gt;getCategorie()-&gt;getId());
+</code></pre>
+<p>Nous avons dans notre exemple utilisé le QueryBuilder de Doctrine, mais vous pouvez obtenir le même résultat en utilisant le DQL <em>(CreateQuery)</em> : <a href="http://symfony.com/doc/current/doctrine.html#querying-with-dql-or-sql">http://symfony.com/doc/current/doctrine.html#querying-with-dql-or-sql</a></p>
+<p><strong>Créez également les fonctions suivantes :</strong></p>
+<ul>
+<li>findSpotlightArticles()</li>
+<li>findSpecialArticles()</li>
+</ul>
+<p>A ce stade, nous savons maintenant créer et récupérer nos informations depuis la BDD.</p>
+<blockquote>
+<p>Pour mettre à jours des données : <a href="https://symfony.com/doc/current/doctrine.html#updating-an-object">https://symfony.com/doc/current/doctrine.html#updating-an-object</a></p>
+</blockquote>
+<p>Ou :</p>
+<blockquote>
+<p>Pour supprimer des données :<br>
+<a href="https://symfony.com/doc/current/doctrine.html#deleting-an-object">https://symfony.com/doc/current/doctrine.html#deleting-an-object</a></p>
+</blockquote>
+<p>Sur la base de ce que nous venons de voir, récupérez maintenant depuis la base de données :</p>
+<ul>
+<li>Les articles de la page d’accueil ;</li>
+<li>Les articles du Spotlight de la page d’accueil ;</li>
+<li>Les articles d’une catégorie ;</li>
+<li>L’ Affichage d’un article et des suggestions.</li>
+</ul>
 <p>Written with ❤️ by <a href="https://github.com/hugoliegeard">Hugo LIEGEARD</a>.</p>
 </div>
 </body>

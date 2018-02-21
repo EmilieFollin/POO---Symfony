@@ -1,5 +1,6 @@
 <?php
 namespace App\Controller\TechNews;
+use App\Entity\Article;
 use App\Service\Article\ArticleProvider;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -37,12 +38,33 @@ class IndexController extends Controller
     }
     /**
      * Page permettant d'afficher un Article
-     * @Route("/{libellecategorie}/{slugarticle}_{idarticle}.html",
+     * @Route("/{libellecategorie}/{slugarticle}_{id}.html",
      *     name="index_article",
-     *     requirements={"idarticle" = "\d+"})
+     *     requirements={"id" = "\d+"})
      */
-    public function article($libellecategorie, $slugarticle, $idarticle) {
+    public function article(Article $article) {
         # index.php/business/une-formation-symfony-a-paris_98426852.html
-        return new Response("<html><body><h1>Page Article : $libellecategorie | $slugarticle | $idarticle</h1></body></html>");
+
+        # Récupération avec Doctrine
+        #$article = $this->getDoctrine()
+         #   ->getRepository(Article::class)
+          #  ->find($idarticle);
+
+        # Si aucun article n'est trouvé...
+        if(!$article) :
+
+            # On génère une exception
+            #throw $this->createNotFoundException(
+            #    "Nous n'avons pas trouvé votre article ID : $idarticle"
+            #);
+
+            # Ou on peut aussi rediriger l'utilisateur sur la page index
+            return $this->redirectToRoute('index',[],Response::HTTP_MOVED_PERMANENTLY);
+
+        endif;
+
+        return $this->render('index/article.html.twig', [
+            'article' => $article
+        ]);
     }
 }

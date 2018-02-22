@@ -60,8 +60,21 @@ class ArticleController extends Controller
             $auteur->getPrenom() );
 
 
+    }
 
+    /**
+     * Formulaire pour ajouter un article
+     * @Route("/creer-un-article", name="article_add")
+     */
+    public function addarticle() {
+        # Récupération des catégories
+        $categories = $this->getDoctrine()->getRepository(Categorie::class)->findAll();
 
+        # Création d'un nouvel article
+        $article = new Article();
+
+        $auteur = $this->getDoctrine()->getRepository(Auteur::class)->find(1);
+        $article->setAuteur($auteur);
 
     }
 

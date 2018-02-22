@@ -62,7 +62,7 @@
                                 <a href="#">
                                     <img alt="{{ article.titre }}" src="{{ asset('images/product/'~article.featuredimage) }}" />
                                 </a>
-                                <a href="#" class="cate-tag">{{ article.categorie.libelle }}</a>
+                                <a href="{{ url('index_categorie', {'libellecategorie' : article.categorie.libelle | slugify }) }}" class="cate-tag">{{ article.categorie.libelle }}</a>
                             </div>
                             <h3><a href="#">{{ article.titre }}</a></h3>
                             <div class="meta-post">

@@ -1,5 +1,7 @@
 {% extends "layout.html.twig" %}
 
+{% set active = app.request.get('article.categorie.libelle') | capitalize %}
+
 {% block page_title %}
     Titre de notre article
 {% endblock %}

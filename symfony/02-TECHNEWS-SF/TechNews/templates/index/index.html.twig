@@ -1,5 +1,7 @@
 {% extends "layout.html.twig" %}
 
+{% set active = 'index' %}
+
 {% block page_title %}
     Accueil
 {% endblock %}
@@ -22,11 +24,14 @@
                         <article class="spotlight-item">
                             <div class="spotlight-img">
                                 <img alt="{{ article.titre }}" src="{{ asset('images/product/'~article.featuredimage) }}" class="img-responsive" />
-                                <a href="#" class="cate-tag">{{ article.categorie.libelle }}</a>
+                                <a href="{{ url('index_categorie', {'libellecategorie' : article.categorie.libelle | slugify }) }}" class="cate-tag">{{ article.categorie.libelle }}</a>
                             </div>
                             <div class="spotlight-item-caption">
                                 <h2 class="font-heading">
-                                    <a href="#">
+                                    <a href="{{ url('index_article', {
+                                        libellecategorie : article.categorie.libelle | slugify,
+                                        slugarticle      : article.titre | slugify,
+                                        id        : article.id }) }}">
                                         {{ article.titre }}
                                     </a>
                                 </h2>

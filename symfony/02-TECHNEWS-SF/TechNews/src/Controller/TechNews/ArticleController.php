@@ -51,10 +51,23 @@ class ArticleController extends Controller
         #Flush : sauvegarde
 
 
+
+
         #Retour de la vue
         return new Response('Nouvel article ajouté avec ID : ' .
             $article->getId() . ' et la nouvelle catégorie : ' .
             $categorie->getLibelle() . ' de Auteur : ' .
             $auteur->getPrenom() );
+
+
+
+
+
     }
+
+
+
+
+
+
 }

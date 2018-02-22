@@ -1,6 +1,8 @@
 <?php
 namespace App\Controller\TechNews;
+
 use App\Entity\Article;
+use App\Entity\Categorie;
 use App\Service\Article\ArticleProvider;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,11 +19,24 @@ class IndexController extends Controller
      */
     public function index(ArticleProvider $articleProvider) {
         # return new Response("<html><body><h1>Page d'Accueil</h1></body></html>");
-        $articles = $articleProvider->getArticles();
+        # $articles = $articleProvider->getArticles();
+
+
+        $repository = $this->getDoctrine()->getRepository(Article::class);
+
+
+        #recuperation des articles depuis la BDD
+        $articles=$repository->findAll();
+
+
+        #recuperation des articles du spotlight
+        $spotlight = $repository->findSpotlightArticles();
+
 
         # Transmission à la vue
         return $this->render('index/index.html.twig', [
-            'articles' => $articles
+            'articles' => $articles,
+            'spotlight' => $spotlight
         ]);
     }
     /**
@@ -34,8 +49,22 @@ class IndexController extends Controller
      * @return Response
      */
     public function categorie($libellecategorie = 'tout') {
-        return new Response("<html><body><h1>Page Catégorie : $libellecategorie</h1></body></html>");
+        # return new Response("<html><body><h1>Page Catégorie : $libellecategorie</h1></body></html>");
+
+        #recupere la categorie en elle meme
+        $categorie = $this->getDoctrine()
+        ->getRepository(Categorie::class)->findOneBy(['libelle' => $libellecategorie]);
+
+        $articles = $categorie->getArticles();
+
+        return $this->render('index/categorie.html.twig', [
+            'articles' => $articles
+        ]);
+
     }
+
+
+
     /**
      * Page permettant d'afficher un Article
      * @Route("/{libellecategorie}/{slugarticle}_{id}.html",
@@ -63,8 +92,21 @@ class IndexController extends Controller
 
         endif;
 
+        # Récupération des suggestions
+        $suggestions = $this->getDoctrine()
+            ->getRepository(Article::class)
+            ->findArticleSuggestions($article->getId(),$article->getCategorie()->getId());
+
+
+
         return $this->render('index/article.html.twig', [
-            'article' => $article
+            'article' => $article,
+            'suggestions' => $suggestions,
         ]);
+
+
     }
+
+
+
 }

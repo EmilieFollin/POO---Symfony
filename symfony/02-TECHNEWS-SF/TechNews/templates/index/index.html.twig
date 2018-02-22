@@ -6,7 +6,7 @@
 
 {% block content %}
 
-{{ dump(articles) }}
+ {# {{ dump(articles) }} #}
 
 <div class="row">
     <!--colleft-->
@@ -16,8 +16,8 @@
         </div>
         <!--sportlight-->
         <section class="owl-carousel owl-spotlight">
-            {% for article in articles %}
-                {% if article.spotlight %}
+            {% for article in spotlight %}
+
                     <div>
                         <article class="spotlight-item">
                             <div class="spotlight-img">
@@ -40,9 +40,10 @@
                                 </span>
                                 </div>
                             </div>
+                            {{ article.contenu | accroche }}
                         </article>
                     </div>
-                {% endif %}
+
             {% endfor %}
         </section>
 

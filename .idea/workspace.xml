@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41c76229-cd69-4eb9-becf-5e5196f9f6d5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/symfony/rappel/Eleve.php" afterPath="$PROJECT_DIR$/symfony/rappel/Eleve.php" />
-    </list>
+    <list default="true" id="41c76229-cd69-4eb9-becf-5e5196f9f6d5" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/symfony/02-TECHNEWS-SF/TechNews/src/Service/Article/ArticleProvider.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
-              <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+              <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -112,7 +110,7 @@
         <entry file="file://$PROJECT_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/autoload.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -247,7 +245,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/symfony/02-TECHNEWS-SF/TechNews/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/symfony/rappel/LiteNews" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -289,12 +287,12 @@
       <workItem from="1519118707891" duration="13700000" />
       <workItem from="1519202589171" duration="16931000" />
       <workItem from="1519289931672" duration="9507000" />
-      <workItem from="1519376088959" duration="3302000" />
+      <workItem from="1519376088959" duration="3936000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59336000" />
+    <option name="totallyTimeSpent" value="59970000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -552,7 +550,7 @@
     <entry file="file://$PROJECT_DIR$/symfony/02-TECHNEWS-SF/TechNews/src/Service/Article/ArticleProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -592,7 +590,7 @@
     <entry file="file://$PROJECT_DIR$/symfony/02-TECHNEWS-SF/TechNews/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>

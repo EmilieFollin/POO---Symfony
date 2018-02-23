@@ -17,7 +17,6 @@ class Auteur
      */
     private $id;
 
-
     /**
      * @ORM\Column(type="string", length=50)
      */
@@ -59,12 +58,14 @@ class Auteur
      */
     private $articles;
 
+    // -------------------------------- Constructeur
+
     /**
      * Auteur constructor.
      */
     public function __construct()
     {
-        $this->dateinscription=new \DateTime();
+        $this->dateinscription = new \DateTime();
         $this->articles = new ArrayCollection();
     }
 
@@ -211,7 +212,6 @@ class Auteur
     {
         $this->articles = $articles;
     }
-
 
 
 

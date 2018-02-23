@@ -27,11 +27,9 @@ class Categorie
      */
     private $articles;
 
-
-
     public function __construct()
     {
-        $this->articles= new ArrayCollection();
+        $this->articles = new ArrayCollection();
     }
 
     /**
@@ -82,8 +80,4 @@ class Categorie
         $this->articles = $articles;
     }
 
-
-
-
 }
-

@@ -1,7 +1,6 @@
 index:
-  path: /
-  controller: App\Controller\TechNews\IndexController::index
-
+    path: /
+    controller: App\Controller\TechNews\IndexController::index
 
 accueil:
     path: /accueil
@@ -9,8 +8,6 @@ accueil:
     defaults:
         route: index
         permanent: true
-
-
 
 mentions_legales:
     path:         /mentions-legales

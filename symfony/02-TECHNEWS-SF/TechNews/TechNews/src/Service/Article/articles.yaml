@@ -1,0 +1,97 @@
+data:
+  article1 :
+    id : 1
+    titre : 'Tip Aligning Digital Marketing with Business Goals and Objectives'
+    contenu    : '<p> <span class="dropcap ">N</span>ulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Sed porttitor lectus nibh.</p><p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.'
+    featuredimage : '3.jpg'
+    special : false
+    spotlight : true
+    datecreation : 2017-02-26 09:37:18
+    categorie:
+      id : 2
+      libelle : 'Business'
+    auteur:
+      id : 1
+      prenom : 'Hugo'
+      nom : 'LIEGEARD'
+      email : 'wf3@hl-media.fr'
+  article2 :
+    id : 2
+    titre : 'Six big ways MacOS Sierra is going to change your Apple experience'
+    contenu    : '<p> <span class="dropcap ">N</span>ulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Sed porttitor lectus nibh.</p><p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.'
+    featuredimage : '4.jpg'
+    special : false
+    spotlight : true
+    datecreation : 2017-02-26 11:19:18
+    categorie:
+      id : 3
+      libelle : 'Computing'
+    auteur:
+      id : 1
+      prenom : 'Sylviane'
+      nom : 'PEREZ'
+      email : 'sylviane.perez@wf3.fr'
+  article3 :
+    id : 1
+    titre : 'Will Anker be the company to finally put a heads-up display in my car'
+    contenu    : '<p> <span class="dropcap ">N</span>ulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Sed porttitor lectus nibh.</p><p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.'
+    featuredimage : '5.jpg'
+    special : true
+    spotlight : false
+    datecreation : 2017-02-26 09:37:18
+    categorie:
+      id : 2
+      libelle : 'Business'
+    auteur:
+      id : 2
+      prenom : 'Sylviane'
+      nom : 'PEREZ'
+      email : 'sylviane.perez@hl-media.fr'
+  article4 :
+    id : 4
+    titre : 'Tip Aligning Digital Marketing with Business Goals and Objectives'
+    contenu    : '<p> <span class="dropcap ">N</span>ulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Sed porttitor lectus nibh.</p><p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.'
+    featuredimage : '3.jpg'
+    special : false
+    spotlight : false
+    datecreation : 2017-02-26 09:37:18
+    categorie:
+      id : 2
+      libelle : 'Business'
+    auteur:
+      id : 1
+      prenom : 'Hugo'
+      nom : 'LIEGEARD'
+      email : 'wf3@hl-media.fr'
+  article5 :
+    id : 5
+    titre : 'Tip Aligning Digital Marketing with Business Goals and Objectives'
+    contenu    : '<p> <span class="dropcap ">N</span>ulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Sed porttitor lectus nibh.</p><p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.'
+    featuredimage : '7.jpg'
+    special : false
+    spotlight : false
+    datecreation : 2017-02-26 09:37:18
+    categorie:
+      id : 2
+      libelle : 'Business'
+    auteur:
+      id : 2
+      prenom : 'Sylviane'
+      nom : 'PEREZ'
+      email : 'sylviane.perez@hl-media.fr'
+  article6 :
+    id : 1
+    titre : 'Tip Aligning Digital Marketing with Business Goals and Objectives'
+    contenu    : '<p> <span class="dropcap ">N</span>ulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Sed porttitor lectus nibh.</p><p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.'
+    featuredimage : '9.jpg'
+    special : true
+    spotlight : true
+    datecreation : 2017-02-26 09:37:18
+    categorie:
+      id : 2
+      libelle : 'Business'
+    auteur:
+      id : 1
+      prenom : 'Hugo'
+      nom : 'LIEGEARD'
+      email : 'wf3@hl-media.fr'

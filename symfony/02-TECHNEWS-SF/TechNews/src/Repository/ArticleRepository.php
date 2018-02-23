@@ -13,8 +13,7 @@ class ArticleRepository extends ServiceEntityRepository
         parent::__construct($registry, Article::class);
     }
 
-    #trouvez les 5 derniers articles
-    public function findLastFiveArticle()
+    public function findLastFiveArticles()
     {
         return $this->createQueryBuilder('a')
             ->orderBy('a.id', 'DESC')
@@ -24,7 +23,6 @@ class ArticleRepository extends ServiceEntityRepository
             ;
     }
 
-    #trouvez les sugestions d'articles
     public function findArticleSuggestions($idarticle, $idcategorie)
     {
         return $this->createQueryBuilder('a')
@@ -36,7 +34,6 @@ class ArticleRepository extends ServiceEntityRepository
             ->getResult()
             ;
     }
-
 
     public function findSpotlightArticles() {
         return $this->createQueryBuilder('a')
@@ -53,4 +50,5 @@ class ArticleRepository extends ServiceEntityRepository
             ->getResult()
             ;
     }
+
 }

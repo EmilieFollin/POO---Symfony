@@ -1,12 +1,13 @@
 </div>
-
+</div>
+<!--footer-->
 <footer class="footer">
     <div class="container">
         <div class="row">
             <div class="col-md-4  col-sm-4 col-xs-12">
                 <div class="about">
                     <a href="#" class="logo">
-                        <img alt="" src="images/logo_footer.png" />
+                        <img alt="Logo" src="{{ asset('images/logo_footer.png') }}" />
                     </a>
                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
                 </div>
@@ -15,9 +16,7 @@
                 <h3>NOS CATEGORIES</h3>
                 <ul class="list-category">
                     {% for categorie in categories %}
-                        <li>
-                            <a href="{{ url('index_categorie', { libellecategorie : categorie.libelle | lower }) }}">{{ categorie.libelle }}</a>
-                        </li>
+                        <li><a href="{{ url('index_categorie', { libellecategorie : categorie.libelle | slugify }) }}">{{ categorie.libelle }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
@@ -35,7 +34,6 @@
                     <a href="#">Smart phone</a>
                     <a href="#">Nexus</a>
                     <a href="#">Canvas</a>
-
                 </div>
             </div>
         </div>
@@ -84,3 +82,4 @@
         </div>
     </div>
 </footer>
+</div>

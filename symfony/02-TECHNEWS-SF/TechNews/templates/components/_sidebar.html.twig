@@ -13,10 +13,16 @@
             <ul class="list-news-popular">
                 {% for article in articles %}
                     <li>
-                        <a href="#">
+                        <a href="{{ url('index_article', {
+                            'libellecategorie'  : article.categorie.libelle | slugify,
+                            'slugarticle'       : article.titre | slugify,
+                            'id'                : article.id }) }}">
                             <img alt="{{ article.titre }}" src="{{ asset('images/product/' ~ article.featuredimage) }}">
                         </a>
-                        <h3><a href="#">{{ article.titre }}</a></h3>
+                        <h3><a href="{{ url('index_article', {
+                                'libellecategorie'  : article.categorie.libelle | slugify,
+                                'slugarticle'       : article.titre | slugify,
+                                'id'                : article.id }) }}">{{ article.titre }}</a></h3>
                         <div class="meta-post">
                             <a href="#">
                                 {{ article.auteur.prenom ~ ' ' ~ article.auteur.nom }}
@@ -88,13 +94,19 @@
 				En Avant
 			</span>
         </div>
-        {#<div class="list-special">
+        <div class="list-special">
             {% for article in special %}
                 <article class="news-two-large">
-                    <a href="#">
+                    <a href="{{ url('index_article', {
+                        'libellecategorie'  : article.categorie.libelle | slugify,
+                        'slugarticle'       : article.titre | slugify,
+                        'id'                : article.id }) }}">
                         <img alt="{{ article.titre }}" src="{{ asset('images/product/' ~ article.featuredimage) }}">
                     </a>
-                    <h3><a href="#">{{ article.titre }}</a></h3>
+                    <h3><a href="{{ url('index_article', {
+                            'libellecategorie'  : article.categorie.libelle | slugify,
+                            'slugarticle'       : article.titre | slugify,
+                            'id'                : article.id }) }}">{{ article.titre }}</a></h3>
                     <div class="meta-post">
                         <a href="#">
                             {{ article.auteur.prenom ~ ' ' ~ article.auteur.nom }}
@@ -106,6 +118,6 @@
                     </div>
                 </article>
             {% endfor %}
-        </div>  #}
+        </div>
     </div>
 </div>

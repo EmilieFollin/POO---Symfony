@@ -28,7 +28,7 @@ class Article
     private $contenu;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=150)
      */
     private $featuredimage;
 
@@ -67,8 +67,7 @@ class Article
         $this->datecreation = new \DateTime();
     }
 
-
-
+    // ---------------------------- Getters et Setters
 
     /**
      * @return mixed
@@ -213,6 +212,5 @@ class Article
     {
         $this->auteur = $auteur;
     }
-
 
 }

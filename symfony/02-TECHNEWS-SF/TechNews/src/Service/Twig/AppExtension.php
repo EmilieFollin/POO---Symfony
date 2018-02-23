@@ -37,7 +37,7 @@ class AppExtension extends AbstractExtension
                     # On retourne l'accroche
                     return $string . '...';
 
-                }), # -- Fin de Twig Filter Accroche
+            }), # -- Fin de Twig Filter Accroche
 
             new \Twig_Filter('slugify',
                 function($text) {
@@ -66,7 +66,7 @@ class AppExtension extends AbstractExtension
 
                     return $text;
 
-                }) # -- Fin de Twig Filter Slugify
+            }) # -- Fin de Twig Filter Slugify
         ]; # -- Fin du Array
     } # -- Fin de getFilters
 }

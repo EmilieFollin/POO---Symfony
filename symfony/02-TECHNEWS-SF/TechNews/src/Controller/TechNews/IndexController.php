@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Controller\TechNews;
+
 
 use App\Entity\Article;
 use App\Entity\Categorie;
@@ -8,9 +10,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-
 class IndexController extends Controller
 {
+
     /**
      * Page d'accueil de notre site.
      * Configuration de notre route dans routes.yaml
@@ -21,17 +23,14 @@ class IndexController extends Controller
         # return new Response("<html><body><h1>Page d'Accueil</h1></body></html>");
         # $articles = $articleProvider->getArticles();
 
+        $repository = $this->getDoctrine()
+            ->getRepository(Article::class);
 
-        $repository = $this->getDoctrine()->getRepository(Article::class);
+        # Récupération des articles depuis la BDD
+        $articles = $repository->findAll();
 
-
-        #recuperation des articles depuis la BDD
-        $articles=$repository->findAll();
-
-
-        #recuperation des articles du spotlight
+        # Récupération des articles du spotlight
         $spotlight = $repository->findSpotlightArticles();
-
 
         # Transmission à la vue
         return $this->render('index/index.html.twig', [
@@ -39,6 +38,7 @@ class IndexController extends Controller
             'spotlight' => $spotlight
         ]);
     }
+
     /**
      * Page permettant d'afficher les articles d'une catégorie
      * @Route("/categorie/{libellecategorie}",
@@ -49,11 +49,12 @@ class IndexController extends Controller
      * @return Response
      */
     public function categorie($libellecategorie = 'tout') {
-        # return new Response("<html><body><h1>Page Catégorie : $libellecategorie</h1></body></html>");
 
-        #recupere la categorie en elle meme
         $categorie = $this->getDoctrine()
-        ->getRepository(Categorie::class)->findOneBy(['libelle' => $libellecategorie]);
+            ->getRepository(Categorie::class)
+            ->findOneBy(
+                ['libelle' => $libellecategorie]
+            );
 
         $articles = $categorie->getArticles();
 
@@ -62,8 +63,6 @@ class IndexController extends Controller
         ]);
 
     }
-
-
 
     /**
      * Page permettant d'afficher un Article
@@ -75,9 +74,9 @@ class IndexController extends Controller
         # index.php/business/une-formation-symfony-a-paris_98426852.html
 
         # Récupération avec Doctrine
-        #$article = $this->getDoctrine()
-         #   ->getRepository(Article::class)
-          #  ->find($idarticle);
+        # $article = $this->getDoctrine()
+        #     ->getRepository(Article::class)
+        #     ->find($idarticle);
 
         # Si aucun article n'est trouvé...
         if(!$article) :
@@ -92,22 +91,21 @@ class IndexController extends Controller
 
         endif;
 
-        # Récupération des suggestions
         $suggestions = $this->getDoctrine()
             ->getRepository(Article::class)
-            ->findArticleSuggestions($article->getId(),$article->getCategorie()->getId());
-
-
+            ->findArticleSuggestions($article->getId(), $article->getCategorie()->getId());
 
         return $this->render('index/article.html.twig', [
-            'article' => $article,
-            'suggestions' => $suggestions,
+            'article'       => $article,
+            'suggestions'   => $suggestions
         ]);
-
 
     }
 
-
+    /**
+     * Affiche la sidebar du site.
+     * @return Response
+     */
     public function sidebar() {
 
         # Récupération du Répository
@@ -125,7 +123,5 @@ class IndexController extends Controller
         ]);
 
     }
-
-
 
 }
